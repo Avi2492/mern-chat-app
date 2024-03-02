@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
+import messagesRoutes from "./routes/message.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 const app = express();
 
@@ -9,8 +11,14 @@ const PORT = process.env.PORT || 3001;
 // This will help to get extract the data from body
 app.use(express.json());
 
+// Middle ware cookie parser
+app.use(cookieParser());
+
 //Middlewares
 app.use("/api/auth", authRoutes);
+
+// Middleware for message
+app.use("/api/messages", messagesRoutes);
 
 // app.get("/", (req, res) => {
 //   res.send("Server is running");
