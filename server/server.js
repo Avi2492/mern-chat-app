@@ -1,8 +1,9 @@
 import express from "express";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import messagesRoutes from "./routes/message.routes.js";
+import userRoutes from "./routes/user.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 const app = express();
 
@@ -19,6 +20,9 @@ app.use("/api/auth", authRoutes);
 
 // Middleware for message
 app.use("/api/messages", messagesRoutes);
+
+// Middleware for users
+app.use("/api/users", userRoutes);
 
 // app.get("/", (req, res) => {
 //   res.send("Server is running");
