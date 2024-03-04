@@ -6,8 +6,8 @@ function Logo() {
       <img
         src="https://cdn-icons-png.flaticon.com/512/3751/3751759.png"
         alt="chit-chat"
-        height={100}
-        width={100}
+        height={80}
+        width={70}
       />
     </div>
   );

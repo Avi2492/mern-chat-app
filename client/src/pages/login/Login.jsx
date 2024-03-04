@@ -15,7 +15,7 @@ function Login() {
           </span>
         </div>
 
-        <form className="mt-8">
+        <form className="mt-4">
           <div className="space-y-5">
             <div>
               <label htmlFor="" className="text-base font-medium text-gray-900">

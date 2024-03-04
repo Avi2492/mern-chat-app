@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../components/logo/Logo";
 import { Link } from "react-router-dom";
+import GenderCheck from "./GenderCheck";
 
 function Signup() {
   return (
@@ -15,39 +16,42 @@ function Signup() {
           </span>
         </div>
 
-        <form className="mt-8">
+        <form className="mt-4">
           <div className="space-y-5">
-            <div>
-              <label
-                htmlFor="name"
-                className="text-base font-medium text-gray-900"
-              >
-                {" "}
-                Full Name{" "}
-              </label>
-              <div className="mt-2">
-                <input
-                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                  type="text"
-                  placeholder="Enter your fullname 😎"
-                />
+            <div className="flex gap-3 justify-between">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="text-base font-medium text-gray-900"
+                >
+                  {" "}
+                  Full Name{" "}
+                </label>
+                <div className="mt-2">
+                  <input
+                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="text"
+                    placeholder="Enter your fullname 😎"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-base font-medium text-gray-900">
+                  {" "}
+                  User Name{" "}
+                </label>
+                <div className="mt-2">
+                  <input
+                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="text"
+                    placeholder="Enter your username 🥰"
+                  />
+                </div>
               </div>
             </div>
-            <div>
-              <label className="text-base font-medium text-gray-900">
-                {" "}
-                User Name{" "}
-              </label>
-              <div className="mt-2">
-                <input
-                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                  type="text"
-                  placeholder="Enter your username 🥰"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center justify-between">
+
+            <div className=" gap-3 flex items-center justify-between">
+              <div>
                 <label
                   htmlFor="password"
                   className="text-base font-medium text-gray-900"
@@ -55,16 +59,37 @@ function Signup() {
                   {" "}
                   Password{" "}
                 </label>
+
+                <div className="mt-2">
+                  <input
+                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="password"
+                    placeholder="Enter your password 🙈"
+                    id="password"
+                  />
+                </div>
               </div>
-              <div className="mt-2">
-                <input
-                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                  type="password"
-                  placeholder="Enter your password 🙈"
-                  id="password"
-                />
+              <div>
+                <label
+                  htmlFor="password"
+                  className="text-base font-medium text-gray-900"
+                >
+                  {" "}
+                  Confirm Password{" "}
+                </label>
+
+                <div className="mt-2">
+                  <input
+                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    type="password"
+                    placeholder="Confirm your password 🤫"
+                    id="password"
+                  />
+                </div>
               </div>
             </div>
+            {/* Gender checkbox */}
+            <GenderCheck />
             <p className="mt-2 text-center text-base text-gray-300">
               Already have an account?{" "}
               <Link

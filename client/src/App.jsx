@@ -9,8 +9,8 @@ function App() {
     <>
       <div className="p-4 h-screen flex items-center justify-center bg-gray-500">
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
