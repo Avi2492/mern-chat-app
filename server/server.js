@@ -1,5 +1,6 @@
 import express from "express";
 import * as dotenv from "dotenv";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import messagesRoutes from "./routes/message.routes.js";
@@ -14,6 +15,10 @@ app.use(express.json());
 
 // Middle ware cookie parser
 app.use(cookieParser());
+
+// Middle ware for handling cors policy error
+// Option:1 Allow all origins with default of cors(*)
+app.use(cors());
 
 //Middlewares
 app.use("/api/auth", authRoutes);

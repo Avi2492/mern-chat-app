@@ -39,14 +39,6 @@ function Login() {
                   {" "}
                   Password{" "}
                 </label>
-                <a
-                  href="#"
-                  title=""
-                  className="text-sm font-semibold text-black hover:underline"
-                >
-                  {" "}
-                  Forgot password?{" "}
-                </a>
               </div>
               <div className="mt-2">
                 <input
@@ -67,7 +59,7 @@ function Login() {
             </p>
             <div>
               <button
-                type="button"
+                type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80 gap-2"
               >
                 Start Your Journey! <span>❤️</span>
