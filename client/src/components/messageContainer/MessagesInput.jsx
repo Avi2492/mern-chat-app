@@ -2,8 +2,9 @@ import React from "react";
 import { GrSend } from "react-icons/gr";
 
 function MessagesInput() {
+  const handleSubmit = async (e) => {};
   return (
-    <form className="px-4 my-3">
+    <form className="px-4 my-3" onSubmit={handleSubmit}>
       <div className="w-full relative">
         <input
           type="text"
