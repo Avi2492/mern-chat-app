@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import MessageComponent from "./MessageComponent";
 import useGetMessages from "../../hooks/useGetMessages";
 import MessageSkelton from "../skeltons/MessageSkelton";
 
 function Messages() {
   const { messages, isLoading } = useGetMessages();
-  console.log(messages);
+  // console.log(messages);
+
+  // Automatic scroll when msg send
+  const lastMessageRef = useRef();
+  useEffect(() => {
+    setTimeout(() => {
+      lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }, [messages]);
   return (
     <div className="px-4 flex-1 overflow-auto">
       {!isLoading &&
         messages.length > 0 &&
         messages.map((message, idx) => (
-          <MessageComponent key={idx} message={message} />
+          <div key={idx} ref={lastMessageRef}>
+            <MessageComponent message={message} />
+          </div>
         ))}
+
       {isLoading && [...Array(3)].map((_, idx) => <MessageSkelton key={idx} />)}
 
       {/* Start Message Line */}
