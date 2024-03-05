@@ -13,6 +13,11 @@ const io = new Server(server, {
   },
 });
 
+// Realtime message update
+export const getReceiverSocketId = (receiverId) => {
+  return userSocketMap[receiverId];
+};
+
 // To get user online status {userId: socketId}
 const userSocketMap = {};
 

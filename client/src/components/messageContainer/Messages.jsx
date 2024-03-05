@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import MessageComponent from "./MessageComponent";
 import useGetMessages from "../../hooks/useGetMessages";
 import MessageSkelton from "../skeltons/MessageSkelton";
+import useListenMessages from "../../hooks/useListenMessages";
 
 function Messages() {
   const { messages, isLoading } = useGetMessages();
-  // console.log(messages);
+  useListenMessages();
 
   // Automatic scroll when msg send
   const lastMessageRef = useRef();
