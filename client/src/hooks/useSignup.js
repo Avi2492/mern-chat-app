@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/AuthContext";
 
 function useSignup() {
   const [isLoading, setIsLoading] = useState(false);
-  const { authUser, setAuthUser } = useAuthContext();
+  const { setAuthUser } = useAuthContext();
   const signup = async ({
     fullname,
     username,

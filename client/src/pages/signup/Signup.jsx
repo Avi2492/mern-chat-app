@@ -144,8 +144,13 @@ function Signup() {
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80 gap-2"
+                disabled={isLoading}
               >
-                Find Love Today <span>😘</span>
+                {isLoading ? (
+                  <span className="loading loading-spinner"></span>
+                ) : (
+                  `Find Love Today 😘`
+                )}
               </button>
             </div>
           </div>
