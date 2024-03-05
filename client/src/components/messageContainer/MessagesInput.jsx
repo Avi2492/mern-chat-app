@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { GrSend } from "react-icons/gr";
 import useSentMessage from "../../hooks/useSentMessage";
 
 function MessagesInput() {
   const [message, setMessage] = useState("");
+
   const { isLoading, sendMessage } = useSentMessage();
+
   const handleSubmit = async (e) => {
-    e.prevebtDefault();
+    e.preventDefault();
 
     if (!message) return;
+
     await sendMessage(message);
+
     setMessage("");
   };
   return (
@@ -27,7 +31,7 @@ function MessagesInput() {
           className="absolute inset-y-0 end-0 flex items-center pe-3 rounded-full"
         >
           {isLoading ? (
-            <span className="loading loading-spinner"></span>
+            <div className="loading loading-spinner"></div>
           ) : (
             <GrSend className="h-6 w-6 text-gray-300" />
           )}

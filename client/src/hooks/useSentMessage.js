@@ -32,7 +32,7 @@ function useSentMessage() {
       setIsLoading(false);
     }
   };
-  return { isLoading, sendMessage };
+  return { sendMessage, isLoading };
 }
 
 export default useSentMessage;
