@@ -10,7 +10,7 @@ export default defineConfig({
     // cors error handle
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
+        target: "https://avi2492-chat-app-backend.vercel.app/",
       },
     },
   },
