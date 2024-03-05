@@ -20,6 +20,9 @@ function MessageComponent({ message }) {
   const bubbleColor = fromMe ? "bg-blue-400" : "bg-pink-400";
 
   const formatTime = extractTime(message.createdAt);
+
+  const animatedClass = message.shouldShake ? "shake" : "";
+
   return (
     <>
       <div className={`chat ${chatClassName}`}>
@@ -29,7 +32,9 @@ function MessageComponent({ message }) {
           </div>
         </div>
         <div className="chat-header gap-1">{name}</div>
-        <div className={`chat-bubble text-white pb-2 ${bubbleColor}`}>
+        <div
+          className={`chat-bubble text-white  ${bubbleColor} ${animatedClass}`}
+        >
           {message.message}
         </div>
         <time className="text-xs opacity-50">{formatTime}</time>
